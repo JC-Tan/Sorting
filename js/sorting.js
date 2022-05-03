@@ -1,14 +1,11 @@
-let arraySize = document.getElementById('arraySize');
-let dlySpd = document.getElementById('delaySpd');
-
-
-
 class Sorting {
     #size;
+    #delay;
     #bars;
 
-    constructor() {
-        this.#size = arraySize.value;
+    constructor(size, delay) {
+        this.#size = size;
+        this.#delay = delay;
         this.#bars = document.querySelector("#array");
     }
 
@@ -25,10 +22,14 @@ class Sorting {
         }
     }
 
-    updateArray() {
-        this.#size = arraySize.value;
-        console.log("Inside updateArray(). Size: " + this.#size);
+    updateArray(size) {
+        this.#size = size;
+        // console.log("Inside updateArray(). Size: " + this.#size);
         this.generateArray();
+    }
+
+    set setDelay(delay) {
+        this.#delay = delay;
     }
 
     // Insertion Sort
@@ -225,7 +226,7 @@ class Sorting {
         this.#setColor(a[i], 'red');
         this.#setColor(a[j], 'red');
 
-        await this.#myDelay(250);
+        await this.#myDelay(this.#delay);
         this.#swap(a[i], a[j]);
 
         this.#setColor(a[i], 'blue');
@@ -244,34 +245,9 @@ class Sorting {
     }
 
     #myDelay(mS) {
+        console.log("In myDelay. Delay speed: " + mS);
         return new Promise(resolve => {
             setTimeout(() => { resolve('') }, mS)
         });
     }
 }
-
-// module.exports = Sorting;
-// export default class Sorting{};
-let s = new Sorting();
-// s.generateArray();
-function changeArraySize() {
-    s.updateArray();
-}
-arraySize.addEventListener("input", changeArraySize);
-window.onload=s.updateArray ();
-// s.insertionSort();
-// function main() {
-//     // let a = [9,8,7,6,5,4,3,2,1];
-//     // console.log(64);
-    
-
-//     // s.selectionSort();
-//     // s.bubbleSort();
-//     // s.mergeSort();
-//     // s.quickSort();
-//     // s.shellSort();
-//     // console.log(a);
-//     }
-
-// main();
-

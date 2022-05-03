@@ -1,14 +1,26 @@
-import Sorting from "./sorting.js";
-// 'use strict'
+let arraySize = document.getElementById('arraySize');
+let dlySpd = document.getElementById('delaySpd');
 
-// const Sorting = require("./sorting");
+let s = new Sorting(arraySize.value);
 
 
-function main(){
-    // let a = [9,8,7,6,5,4,3,2,1];
-    let s = new Sorting(10);
-    s.generateArray();
-    // console.log(a);
+arraySize.addEventListener("input", changeArraySize);
+dlySpd.addEventListener("input", changeDelay)
+window.onload = changeArraySize();
+window.onload = changeDelay();
+
+
+
+function changeArraySize() {
+    s.updateArray(arraySize.value);
 }
 
-main();
+function changeDelay() {
+    s.setDelay = dlySpd.value;
+}
+
+function genNewArray() {
+    s.generateArray();
+}
+
+s.insertionSort();

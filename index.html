@@ -15,25 +15,29 @@
         <div id="sortingContainer">
             <div id="arrayInput">
                 <p>Array Size:</p>
-                <input id="arraySize" type="range" min=20 max=100 step=1 value=64 oninput="this.nextElementSibling.value = this.value">
+                <input id="arraySize" type="range" min=20 max=100 step=1 value=64
+                    oninput="this.nextElementSibling.value = this.value">
                 <output>64</output>
                 <p>Delay</p>
-                <input id="delaySpd" type="range" min=10 max=500 step=10 value=150 oninput="this.nextElementSibling.value = this.value">
+                <input id="delaySpd" type="range" min=10 max=500 step=10 value=150
+                    oninput="this.nextElementSibling.value = this.value">
                 <output>150</output>
             </div>
             <div id="btnContainer" class="btnContainer">
-                <button id="insertionBtn">Insertion</button> 
-                <button id="selectionBtn">Selection</button> 
-                <button id="mergeBtn">Merge</button> 
-                <button id="bubbleBtn">Bubble</button> 
-                <button id="quickBtn">Quick</button> 
+                <button id="newArrayBtn">Generate New Array</button>
+                <button id="insertionBtn">Insertion</button>
+                <button id="selectionBtn">Selection</button>
+                <button id="mergeBtn">Merge</button>
+                <button id="bubbleBtn">Bubble</button>
+                <button id="quickBtn">Quick</button>
             </div>
             <div id="array" class="arrayContainer">
-                
+
             </div>
         </div>
     </div>
     <script src="js/sorting.js"></script>
+    <script src="js/test.js"></script>
 
 </body>
 
