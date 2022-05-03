@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/sorting.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -18,18 +18,18 @@
                 <input id="arraySize" type="range" min=20 max=100 step=1 value=64
                     oninput="this.nextElementSibling.value = this.value">
                 <output>64</output>
-                <p>Delay</p>
+                <!-- <p>Delay</p> -->
                 <input id="delaySpd" type="range" min=10 max=500 step=10 value=150
                     oninput="this.nextElementSibling.value = this.value">
                 <output>150</output>
             </div>
             <div id="btnContainer" class="btnContainer">
-                <button id="newArrayBtn">Generate New Array</button>
-                <button id="insertionBtn">Insertion</button>
-                <button id="selectionBtn">Selection</button>
-                <button id="mergeBtn">Merge</button>
-                <button id="bubbleBtn">Bubble</button>
-                <button id="quickBtn">Quick</button>
+                <button id="newBtn">Generate New Array</button>
+                <button id="insBtn">Insertion</button>
+                <button id="selBtn">Selection</button>
+                <button id="merBtn">Merge</button>
+                <button id="bubBtn">Bubble</button>
+                <button id="qckBtn">Quick</button>
             </div>
             <div id="array" class="arrayContainer">
 
@@ -37,7 +37,7 @@
         </div>
     </div>
     <script src="js/sorting.js"></script>
-    <script src="js/test.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

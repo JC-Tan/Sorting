@@ -5,14 +5,19 @@
 }
 
 #btnContainer {
-    grid-column-start: thirdCol;
-    grid-column-end: fourthCol;
+    grid-column-start: secondCol;
+    grid-column-end: thirdCol;
     grid-row-start: secondRow;
     grid-row-start: thirdRow;
 }
 
+#arrayInput {
+    grid-column-start: firstCol;
+    grid-column-end: secondCol;
 
-
+    grid-row-start: firstRow;
+    grid-row-end: secondRow;
+}
 
 .item {
     background: blue;
@@ -22,8 +27,8 @@
 }
 
 #array {
-    grid-column-start: secondCol;
-    grid-column-end: thirdCol;
+    grid-column-start: firstCol;
+    grid-column-end: fourthCol;
     grid-row-start: thirdRow;
     grid-row-end: fourthRow;
     margin-top: 20px;

@@ -11,7 +11,7 @@ class Sorting {
 
     generateArray() {
         this.#bars.innerHTML = ""; 
-        console.log("Inside generateArray(). Size: " + this.#size);
+        // console.log("Inside generateArray(). Size: " + this.#size);
         for (let i = 0; i < this.#size; i++) {
             let val = Math.ceil(Math.random() * this.#size);
             let e = document.createElement("div");
@@ -104,7 +104,7 @@ class Sorting {
             }
         }
         else if (end - start > 2) {
-            let mid = start + (end - start) / 2;
+            let mid = Math.floor(start + (end - start) / 2);
             await this.#mergeSortR(a, start, mid, temp);
             await this.#mergeSortR(a, mid, end, temp);
             this.#merge(a, start, mid, end, temp);
