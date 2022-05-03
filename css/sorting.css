@@ -1,0 +1,19 @@
+
+
+.item {
+    background: blue;
+    border: 1pt solid black;
+    width: 10px;
+    transition: 0.1 all ease;
+}
+
+.arrayContainer {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    transition: 2s all ease;
+}
