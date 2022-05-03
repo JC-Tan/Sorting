@@ -1,13 +1,20 @@
+let arraySize = document.getElementById('arraySize');
+let dlySpd = document.getElementById('delaySpd');
+
+
+
 class Sorting {
     #size;
     #bars;
 
-    constructor(size) {
-        this.#size = size;
+    constructor() {
+        this.#size = arraySize.value;
         this.#bars = document.querySelector("#array");
     }
 
     generateArray() {
+        this.#bars.innerHTML = ""; 
+        console.log("Inside generateArray(). Size: " + this.#size);
         for (let i = 0; i < this.#size; i++) {
             let val = Math.ceil(Math.random() * this.#size);
             let e = document.createElement("div");
@@ -16,6 +23,12 @@ class Sorting {
             e.classList.add('item');
             this.#bars.appendChild(e);
         }
+    }
+
+    updateArray() {
+        this.#size = arraySize.value;
+        console.log("Inside updateArray(). Size: " + this.#size);
+        this.generateArray();
     }
 
     // Insertion Sort
@@ -239,18 +252,26 @@ class Sorting {
 
 // module.exports = Sorting;
 // export default class Sorting{};
-
-function main() {
-    // let a = [9,8,7,6,5,4,3,2,1];
-    let s = new Sorting(64);
-    s.generateArray();
-    s.insertionSort();
-    // s.selectionSort();
-    // s.bubbleSort();
-    // s.mergeSort();
-    // s.quickSort();
-    // s.shellSort();
-    // console.log(a);
+let s = new Sorting();
+// s.generateArray();
+function changeArraySize() {
+    s.updateArray();
 }
+arraySize.addEventListener("input", changeArraySize);
+window.onload=s.updateArray ();
+// s.insertionSort();
+// function main() {
+//     // let a = [9,8,7,6,5,4,3,2,1];
+//     // console.log(64);
+    
 
-main();
+//     // s.selectionSort();
+//     // s.bubbleSort();
+//     // s.mergeSort();
+//     // s.quickSort();
+//     // s.shellSort();
+//     // console.log(a);
+//     }
+
+// main();
+

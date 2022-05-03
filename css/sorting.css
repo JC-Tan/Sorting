@@ -1,3 +1,17 @@
+#sortingContainer {
+    display: grid;
+    grid-template-columns: [firstCol] 25% [secondCol]  auto [thirdCol] 25% [fourthCol];
+    grid-template-rows: [firstRow] 40px [secondRow] 50px [thirdRow] auto [fourthRow] 50px [fifthRow];
+}
+
+#btnContainer {
+    grid-column-start: thirdCol;
+    grid-column-end: fourthCol;
+    grid-row-start: secondRow;
+    grid-row-start: thirdRow;
+}
+
+
 
 
 .item {
@@ -7,7 +21,11 @@
     transition: 0.1 all ease;
 }
 
-.arrayContainer {
+#array {
+    grid-column-start: secondCol;
+    grid-column-end: thirdCol;
+    grid-row-start: thirdRow;
+    grid-row-end: fourthRow;
     margin-top: 20px;
     display: flex;
     align-items: flex-end;
