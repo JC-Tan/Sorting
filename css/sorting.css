@@ -1,36 +1,45 @@
 #sortingContainer {
     display: grid;
-    grid-template-columns: [firstCol] 25% [secondCol]  auto [thirdCol] 25% [fourthCol];
-    grid-template-rows: [firstRow] 40px [secondRow] 50px [thirdRow] auto [fourthRow] 50px [fifthRow];
+    grid-template-columns: [firstCol] 25% [secondCol] auto [thirdCol] 25% [fourthCol];
+    grid-template-rows: [firstRow] 40px [secondRow] 50px [thirdRow] 75px [fourthRow] auto [fifthRow] 50px [sixthRow];
+    background-color: #3b3b3b;
 }
 
-#btnContainer {
-    grid-column-start: secondCol;
-    grid-column-end: thirdCol;
-    grid-row-start: secondRow;
-    grid-row-start: thirdRow;
+.header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    color: white;
+    background-color: #222222;
 }
 
-#arrayInput {
-    grid-column-start: firstCol;
-    grid-column-end: secondCol;
-
-    grid-row-start: firstRow;
-    grid-row-end: secondRow;
+.btnContainer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: #222222;
 }
 
-.item {
-    background: blue;
-    border: 1pt solid black;
-    width: 10px;
-    transition: 0.1 all ease;
+.arrayInput {
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    display: grid;
+    grid-template-columns: [col1] 100px [col2] 100px [col3] auto [col4];
+    grid-template-columns: [row1] 50% [row2] 50% [row3];
 }
 
-#array {
-    grid-column-start: firstCol;
-    grid-column-end: fourthCol;
-    grid-row-start: thirdRow;
-    grid-row-end: fourthRow;
+.arrayContainer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    background-color: #b1b1b1;
     margin-top: 20px;
     display: flex;
     align-items: flex-end;
@@ -39,4 +48,32 @@
     height: 500px;
     justify-content: center;
     transition: 2s all ease;
+}
+
+.btnContainer button {
+    float: left;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 17px;
+    height: 100%;
+    border: none;
+    color: white;
+    background-color: #222222;
+}
+
+.btnContainer button:hover {
+    background-color: #999999;
+}
+
+
+
+.item {
+    background: #8AC7EF;
+    border: 1pt solid black;
+    width: 10px;
+    transition: 0.1 all ease;
+}
+
+#size, #sizeVal, #delay, #delayVal {
+    color: white;
 }

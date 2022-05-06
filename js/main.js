@@ -1,5 +1,7 @@
 let arraySize = document.getElementById("arraySize");
 let dlySpd = document.getElementById("delaySpd");
+let sizeVal = document.getElementById("sizeVal");
+let delVal = document.getElementById("delayVal");
 let buttons = document.querySelectorAll(".btnContainer button");
 let s = new Sorting(arraySize.value);
 
@@ -15,8 +17,18 @@ function main() {
     clickButtons();
     window.onload = changeArraySize();
     window.onload = changeDelay();
+    sizeVal.innerHTML = arraySize.value;
+    delVal.innerHTML = dlySpd.value;
 }
 
+
+arraySize.oninput = function () {
+    sizeVal.innerHTML = this.value;
+}
+
+dlySpd.oninput = function () {
+    delVal.innerHTML = this.value;
+}
 
 
 function clickButtons() {
@@ -25,27 +37,27 @@ function clickButtons() {
     });
 
     $("#insBtn").click(function () {
-        s.generateArray();
+        // s.generateArray();
         s.insertionSort();
     });
 
     $("#selBtn").click(function () {
-        s.generateArray();
+        // s.generateArray();
         s.selectionSort();
     });
 
     $("#merBtn").click(function () {
-        s.generateArray();
+        // s.generateArray();
         s.mergeSort();
     });
 
     $("#bubBtn").click(function () {
-        s.generateArray();
+        // s.generateArray();
         s.bubbleSort();
     });
 
     $("#qckBtn").click(function () {
-        s.generateArray();
+        // s.generateArray();
         s.quickSort();
     });
 }

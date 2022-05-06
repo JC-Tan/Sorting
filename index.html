@@ -9,28 +9,33 @@
 </head>
 
 <body>
-    <br />
-    <p class="header">Sorting Algorithms</p>
     <div id="wrapper">
         <div id="sortingContainer">
-            <div id="arrayInput">
-                <p>Array Size:</p>
-                <input id="arraySize" type="range" min=20 max=100 step=1 value=64
-                    oninput="this.nextElementSibling.value = this.value">
-                <output>64</output>
-                <!-- <p>Delay</p> -->
-                <input id="delaySpd" type="range" min=10 max=500 step=10 value=150
-                    oninput="this.nextElementSibling.value = this.value">
-                <output>150</output>
+            <div id="header" class="header">
+                <p>Sorting Algorithms</p>
             </div>
+            <div id="arrayInput" class="arrayInput">
+                <div class="inputSize">
+                    <p id="size">Array Size: <span id="sizeVal"></span> </p>
+                    <input id="arraySize" type="range" min=20 max=100 step=1 value=64>
+                </div>
+                <div class="inputSpd">
+                    <p id="delay">Delay: <span id="delayVal"></span></p>
+                    <input id="delaySpd" type="range" min=10 max=500 step=10 value=150>
+                </div>
+            </div>
+
+
             <div id="btnContainer" class="btnContainer">
-                <button id="newBtn">Generate New Array</button>
                 <button id="insBtn">Insertion</button>
                 <button id="selBtn">Selection</button>
                 <button id="merBtn">Merge</button>
                 <button id="bubBtn">Bubble</button>
                 <button id="qckBtn">Quick</button>
+                <button id="newBtn">Generate New Array</button>
             </div>
+
+
             <div id="array" class="arrayContainer">
 
             </div>

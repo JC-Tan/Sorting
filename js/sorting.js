@@ -1,21 +1,28 @@
 class Sorting {
+    #array;
     #size;
     #delay;
     #bars;
 
     constructor(size, delay) {
         this.#size = size;
+        this.#array = new Array(size);
         this.#delay = delay;
         this.#bars = document.querySelector("#array");
     }
 
     generateArray() {
-        this.#bars.innerHTML = ""; 
-        // console.log("Inside generateArray(). Size: " + this.#size);
         for (let i = 0; i < this.#size; i++) {
             let val = Math.ceil(Math.random() * this.#size);
+            this.#array[i] = val;
+        }
+    }
+
+    #barArray() {
+        this.#bars.innerHTML = ""; 
+        for (let i = 0; i < this.#size; i++) {
             let e = document.createElement("div");
-            e.style.height = `${val * 3}px`;
+            e.style.height = `${this.#array[i] * 3}px`;
             e.classList.add('bar');
             e.classList.add('item');
             this.#bars.appendChild(e);
@@ -34,7 +41,9 @@ class Sorting {
 
     // Insertion Sort
     insertionSort() {
+        this.#barArray();
         this.#insertionSort(this.#bars, 0, this.#size);
+        // this.#insertionSort(this.#barArray, 0, this.#size);
     }
 
     async #insertionSort(array, start, end) {
@@ -57,6 +66,7 @@ class Sorting {
 
     // Selection Sort
     async selectionSort() {
+        this.#barArray();
         let a = document.querySelectorAll(".bar");
         for (let i = 0; i < this.#size; i++) {
             let min = this.#finMinForSS(a, i, this.#size);
@@ -78,6 +88,7 @@ class Sorting {
 
     // Bubble sort
     async bubbleSort() {
+        this.#barArray();
         let a = document.querySelectorAll(".bar");
         for (let i = 0; i < this.#size; i++) {
             for (let j = 0; j < this.#size - i - 1; j++) {
@@ -91,6 +102,7 @@ class Sorting {
     }
 
     mergeSort() {
+        this.#barArray();
         let a = document.querySelectorAll(".bar");
         let b = new Array(a.length);
         console.log(a.length);
@@ -133,6 +145,7 @@ class Sorting {
 
 
     quickSort() {
+        this.#barArray();
         let a = document.querySelectorAll(".bar");
         this.#quickSortR(a, 0, a.length);
     }
@@ -229,8 +242,8 @@ class Sorting {
         await this.#myDelay(this.#delay);
         this.#swap(a[i], a[j]);
 
-        this.#setColor(a[i], 'blue');
-        this.#setColor(a[j], 'blue')
+        this.#setColor(a[i], '#8AC7EF');
+        this.#setColor(a[j], '#8AC7EF')
 
     }
 
