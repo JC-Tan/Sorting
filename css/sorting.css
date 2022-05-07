@@ -24,14 +24,45 @@
 
 .arrayInput {
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 4;
 
     grid-row-start: 3;
     grid-row-end: 4;
 
     display: grid;
-    grid-template-columns: [col1] 100px [col2] 100px [col3] auto [col4];
-    grid-template-columns: [row1] 50% [row2] 50% [row3];
+    grid-template-columns: [col1] 200px [col2] 200px [col3] 100px [col4] auto [col5];
+}
+
+.inputSize {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.inputSpd {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.playContainer {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
+    align-items: center;
+}
+
+.instructions {
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.instructions p {
+    color: white;
+}
+
+#playBtn {
+    float: left;
+    padding: 12px;
+    font-size: 17px;
 }
 
 .arrayContainer {

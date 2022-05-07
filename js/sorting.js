@@ -12,10 +12,13 @@ class Sorting {
     }
 
     generateArray() {
+        this.#bars.innerHTML = ""; 
+        console.log(this.#bars.innerHTML);
         for (let i = 0; i < this.#size; i++) {
             let val = Math.ceil(Math.random() * this.#size);
             this.#array[i] = val;
         }
+        this.#barArray();
     }
 
     #barArray() {
@@ -43,7 +46,6 @@ class Sorting {
     insertionSort() {
         this.#barArray();
         this.#insertionSort(this.#bars, 0, this.#size);
-        // this.#insertionSort(this.#barArray, 0, this.#size);
     }
 
     async #insertionSort(array, start, end) {
@@ -233,6 +235,8 @@ class Sorting {
             // h = Math.floor((h - 1) / 3);
         }
     }
+
+
     // Helpers
 
     async #swapDriver(a, i, j) {
