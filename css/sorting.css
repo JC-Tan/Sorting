@@ -12,6 +12,13 @@
     grid-row-end: 2;
     color: white;
     background-color: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header p {
+    font-size: 20px;
 }
 
 .btnContainer {
@@ -38,9 +45,17 @@
     grid-column-end: 2;
 }
 
+.inputSize > * {
+    padding-left: 5px;
+}
+
 .inputSpd {
     grid-column-start: 2;
     grid-column-end: 3;
+}
+
+.inputSpd > * {
+    padding-left: 5px;
 }
 
 .playContainer {
@@ -96,8 +111,6 @@
     background-color: #999999;
 }
 
-
-
 .item {
     background: #8AC7EF;
     border: 1pt solid black;
@@ -107,4 +120,11 @@
 
 #size, #sizeVal, #delay, #delayVal {
     color: white;
+}
+
+
+/* Desktop Formatting */
+/* Prevents elements from moving */
+@media only screen and (min-height: 1000px) {
+
 }
