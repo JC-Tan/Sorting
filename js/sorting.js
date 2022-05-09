@@ -174,7 +174,7 @@ class Sorting {
         let midVal = parseInt(a[mid].style.height);
         let endVal = parseInt(a[end - 1].style.height);
 
-        this.#setColor(a[mid], 'yellow');
+        // this.#setColor(a[mid], 'yellow');
         if (mid <= start) {
             if (endVal <= midVal) {
                 await this.#swapDriver(a, start, mid);

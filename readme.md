@@ -13,3 +13,7 @@ You can:
 - Change the size of the array
 - Change the speed
 - Generate a new array to sort
+
+To do:
+- [ ] Show all sorting algorithms at the same time
+- [ ] Add more sorting algorithms
