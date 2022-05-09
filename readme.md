@@ -14,6 +14,8 @@ You can:
 - Change the speed
 - Generate a new array to sort
 
+[Demo](https://www.youtube.com/watch?v=v5HnErjZffE)
+
 To do:
 - [ ] Show all sorting algorithms at the same time
 - [ ] Add more sorting algorithms
