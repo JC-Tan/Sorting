@@ -3,6 +3,7 @@ let dlySpd = document.getElementById("delaySpd");
 let sizeVal = document.getElementById("sizeVal");
 let delVal = document.getElementById("delayVal");
 let buttons = document.querySelectorAll(".btnContainer button");
+let activeButton;
 let s = new Sorting(arraySize.value);
 let command;
 
@@ -29,6 +30,9 @@ function main() {
     window.onload = changeDelay();
     sizeVal.innerHTML = arraySize.value;
     delVal.innerHTML = dlySpd.value;
+    command = INS;
+    activeButton = 0;
+    $("#insBtn").css("background-color", "#999999");
 }
 
 
@@ -48,28 +52,52 @@ function clickButtons() {
 
     $("#insBtn").click(function () {
         command = INS;
+        $("#insBtn").css("background-color", "#999999");
+        activeButton = 0;
+        resetColor();
     });
-
+    
     $("#selBtn").click(function () {
         command = SEL;
+        $("#selBtn").css("background-color", "#999999");
+        activeButton = 1;
+        resetColor();
     });
-
+    
     $("#merBtn").click(function () {
         command = MER;
+        $("#merBtn").css("background-color", "#999999");
+        activeButton = 2;
+        resetColor();
     });
-
+    
     $("#bubBtn").click(function () {
         command = BUB;
+        $("#bubBtn").css("background-color", "#999999");
+        activeButton = 3;
+        resetColor();
     });
-
+    
     $("#qckBtn").click(function () {
         command = QCK;
+        $("#qckBtn").css("background-color", "#999999");
+        activeButton = 4;
+        resetColor();
     });
-
+    
     $("#playBtn").click(function () {
         executeCommand();
     });
+}
 
+function resetColor() {
+    for (let i = 0; i < buttons.length; i++)
+    {
+        if (i != activeButton)
+        {
+            $("#" + buttons[i].id).css("background-color", "#222222");
+        }
+    }
 }
 
 
